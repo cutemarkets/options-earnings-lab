@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "options-earnings-lab"
+version = "0.1.0"
+description = "Research utilities for implied move, quote quality, and historical contract selection around earnings."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "CuteMarkets" }]
+keywords = [
+  "earnings",
+  "options-data",
+  "event-study",
+  "implied-volatility",
+  "research-tools",
+  "quant-research",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/cutemarkets/options-earnings-lab"
+Repository = "https://github.com/cutemarkets/options-earnings-lab"
+Documentation = "https://cutemarkets.com/docs"
+
+[project.scripts]
+options-earnings-lab = "options_earnings_lab.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
