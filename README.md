@@ -28,10 +28,23 @@ This repo is designed to sit next to the SDKs, not replace them. When you need m
 python -m pip install -e ".[dev]"
 ```
 
+If you want the data-backed CLI commands as well, install the CuteMarkets SDK extra:
+
+```bash
+python -m pip install -e ".[dev,sdk]"
+```
+
 ## CLI Example
 
 ```bash
 options-earnings-lab implied-move --spot 412.3 --call-mid 14.2 --put-mid 16.1
+```
+
+Data-backed examples:
+
+```bash
+options-earnings-lab atm-pair --underlying MSFT --event-date 2026-04-29
+options-earnings-lab event-study --underlying MSFT --event-date 2026-04-29 --include-quote-quality
 ```
 
 ## Example Script
